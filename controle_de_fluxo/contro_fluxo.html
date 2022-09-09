@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+        // if...else
+
+        let temperature = 36.5;
+       
+
+        if(temperature > 38){
+            console.log('Febre alta')
+        }
+        else if(temperature >= 37 && temperature <= 38){
+            console.log('Febre moderada')
+        }
+        else{
+            console.log('Você não está com febre')
+        }
+
+        let idade = 18;
+
+        if(idade < 16){
+            console.log('Você não está apto a votar')
+        }else if( idade >= 16 && idade <= 17){
+            console.log('Você está apto a votar, contudo, não é obrigatório')
+        }
+        else if(idade >= 70){
+            console.log('Você pode votar, contudo, não é obrigatório')
+        }
+        else{
+            console.log('O voto é obrigatório')
+        }
+
+        // switch
+
+        let expression = 'b';
+
+        switch (expression) {
+            case 'a':
+                console.log('a')
+                break;
+            case 'b':
+                console.log('b')
+                break;
+            default:
+                console.log('default')
+
+
+        }
+
+        function calculate(num1, operator, num2){
+            let result;
+
+            switch (operator){
+                case '+':
+                    result = num1 + num2;
+                    break
+                case '-':
+                    result = num1 - num2;
+                    break
+                case '*':
+                    result = num1 * num2;
+                    break
+                case '/': 
+                    result = num1 / num2;
+                    break
+                default:
+                    console.log('Não implementado');   
+                    break
+            }
+
+            return result;
+
+
+        }
+
+        console.log(calculate(10, '*', 10));
+
+
+
+         
+
+
+
+    </script>
+    
+</body>
+</html>
