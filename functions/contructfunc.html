@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        function person(nome){
+          this.nome = nome;
+          this.walk = function(){
+            return this.nome + ' andando'
+          }
+        }
+
+        const edu = new person('Eduardo');
+        const vih = new person('Vitória');
+
+        console.log(edu);
+        console.log(vih)
+        console.log(edu.walk());
+
+        let fruta = new String('Goiaba');
+        console.log(fruta);
+
+        let data = new Date('2022-09-07');
+        console.log(data);
+
+        //exemplo
+
+        function pessoa(nome,idade,altura){
+            this.nome = nome;
+            this.idade = idade;
+            this.altura = altura;
+            this.dados = () => {
+                return `Dados do ${nome}`
+            }
+        }
+
+        const eduardo = new pessoa('Eduardo',17,1.80);
+        console.log(eduardo);
+        
+
+    </script>
+
+    
+</body>
+</html>

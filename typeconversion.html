@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+
+
+    <script>
+
+        /*
+            Tyoe conversion (typecasting) vs Type coersion
+
+            * Alteração de um tipo de dado para outro tipo
+        
+        */
+
+        console.log("5" + 5);
+        console.log(Number('10') * 10);
+
+        //Manipulando Strings e Números 
+
+        //Transformar String em Número e Número em String
+
+        let string = '123';
+
+        console.log(Number(string))
+
+        let num1 = 123;
+        console.log(String(num1));
+
+        console.log(typeof(string))
+
+        console.log(typeof(num1))
+
+        //contando quantos caracteres tem uma palavra
+
+       
+
+        let num2 = 1000;
+        console.log(String(num2).length);
+
+
+        // Transformar um número quebrado com 2 casas decimais e trocar por ponto e vírgula
+
+        let num3 = 193829892389.912008383923;
+        console.log(Number(num3.toFixed(2).replace('.',',')));
+
+        // Transforme letras minúsculas em maiúsculas. Faça o contrario disso também
+
+        let minuscula = 'olá, estou no ifce'
+        console.log(minuscula.toUpperCase());
+
+        let maiuscula = 'OLÁ, ESTOU NO IFCE'
+        console.log(maiuscula.toLowerCase());
+
+        let fr = 'PROGRAMAR É MUITO BOM';
+        console.log(fr.toLowerCase().toUpperCase());
+
+        // Manipulando Strings e Arrays
+
+        let phrase = 'Eu quero viver o Amor!';
+        let myArray = phrase.split(' ');
+        console.log(myArray);
+
+        let underphrase = myArray.join('_');
+        console.log(underphrase.toLowerCase());
+
+        let str = 'a b c d e f g h';
+        let arr = str.split(' ');
+        console.log(arr);
+
+        console.log(arr.join(' '))
+
+        // Verificar se o texto contém uma palavra em específica
+
+        let correndo = 'Estou correndo';
+        console.log(correndo.includes('Estou'));
+
+        let ufd = 'UFC UFC';
+        console.log(ufd.replace(/ufc/ig,'IFCE'));
+
+        //regExp
+
+        // /value/ig
+
+        // Criar Array com construtor
+
+        let array = new Array('a','b','c');
+        console.log(array);
+
+        console.log([
+            'a',
+            {nome: 'vih'},
+            () => {
+                return "Olá"
+            }
+
+        ][1]);
+
+        // Transformar uma cadeia de caracteres em elementos de um array
+
+        
+        {
+
+            let word = 'manipulação'
+            let manip = Array.from(word)
+            console.log(manip)
+
+        }
+        
+
+        // Manipulação de Arrays
+
+        let tecs = ['html','css','js'];
+
+        // adicionar um item no fim
+        tecs.push('nodejs');
+        console.log(tecs)
+
+        // adcionar um item no começo
+
+        tecs.unshift('sql')
+        console.log(tecs);
+
+        // remover do fim
+
+        tecs.pop();
+        console.log(tecs);
+
+        // remover do começo
+
+        tecs.shift();
+        console.log(tecs)
+
+        // pegar alguns elementos do Array
+
+        //console.log(tecs.slice(1, 3))
+
+        // remover 1 ou mais items em qualquer posição do array
+
+        console.log(tecs.splice(1, 2))
+
+        // encontrar a posição de um elemento no array
+
+        let index = tecs.indexOf('html');
+        tecs.splice(index, 1);
+        console.log(index);
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

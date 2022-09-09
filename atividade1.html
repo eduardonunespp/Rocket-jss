@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <script>
+
+        
+        // 1. Declare uma variável de nome weight
+
+        let weight;
+
+        // 2. Que tipo de dado é a variável acima?
+
+        console.log(typeof(weight));
+
+        // R = Undefined;
+
+        /* 3. Declare uma variável e atribua valores para cada um dos dados:
+            * name: String
+            * age: Number (integer)
+            * stars: Number (float)
+            * isSubscribed: Boolean
+
+        */
+
+        {
+            let name = 'Edu';
+            let age = 18;
+            let stars = 132.2;
+            let inSubscribed = true;
+
+            console.log(typeof(stars))
+        }
+
+        // 4. A variável student abaixo é de que tipo de dado?
+
+        let student = {};
+
+        console.log(typeof(student));
+
+        // R = object
+
+        // 4.1 Atribua a ela as mesmas propriedades e valores do exercício 3;
+
+        {
+            let student = {name:'Edu', age:18, stars:132.2, inSubscribed:true, weight:70};
+            
+            console.log(student.stars);
+        
+
+        /*4.2 Mostre no console a seguinte mensagem
+
+        <name> de idade <age> pesa <weight> kg.
+            
+        */
+
+        
+
+        console.log(`${student.name} de idade ${student.age} pesa ${student.weight} kg `)
+
+        
+
+        let students = [];
+
+        console.log(typeof(students));
+
+        student2 = [student];
+
+        console.log(student2);
+
+        // 7. Coloque no console o valor da posição zero do Array acima
+
+        console.log(student2[1]);
+
+        // 8. Crie um novo student e coloque na posição 1 do Array students
+
+        const carlos = {
+            name: 'Carlos',
+            age: 18,
+            weight: 70,
+            inSubscribed: true
+        }
+
+        student2[1] = carlos;
+
+        }
+
+        // 9. Sem rodar o código, responda qual é a resposta do código abaixo e por que? Após sua reposta, rode o código e veja se você acertou.
+
+        /*
+            console.log(x);
+
+            var x = 1;
+        */
+
+        console.log(x);
+        var x = 1;
+
+        let arr = ['Pão','Ovos','Presunto'];
+
+        //console.log(['Pão','Ovos','Presunto']);
+
+        console.log(arr[0]);
+        console.log(arr);
+        console.log(typeof(arr));
+        console.log(arr.length);
+
+
+    </script>
+    
+</body>
+</html>
