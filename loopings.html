@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //loopings
+
+
+        //for
+        for(let num = 0; num <= 10; num++){
+            console.log(num);
+        }
+
+        let videogames = ["PS5","X box series X","Switch"];
+
+        for(let item = 0; item < videogames.length; item++ ){
+            console.log(videogames[item]);
+        }
+
+        for(let item = 0; item < 10; item++ ){
+            console.log(videogames[item]);
+        }
+
+        for(let item = 0; item < videogames.length; item++){
+            console.log(videogames[item]);
+            if(videogames[item] == 'X box series X'){
+                console.log("stop");
+                break;
+            }
+            
+        }
+
+        //while
+
+        var i = 0;
+        while(i <= 10){
+            console.log(i)
+            i += 2;
+        }
+
+        // forEach
+
+        let videogames2 = ["PS5","X box series X","Switch"];
+
+        videogames2.forEach(function(item, locacao, array){
+            console.log(item, locacao, array)
+            videogames2.pop();
+        })
+
+        /*{
+            let num = 0;
+            let num_max = 100;
+            for(;num < num_max; num++){
+                console.log(num);
+            }
+        }
+        */
+
+        const copa = ['1959','1962','1970','1994','2002'];
+
+        for(ano = 0; ano < copa.length; ano++){
+            console.log(`O Brasil ganhou a copa de ${copa[ano]}`);
+        }
+
+        let frutas = ['Banana','Macã','Pera','Uva','Melância'];
+
+        for(fruta = 0; fruta < frutas.length; fruta++){
+            console.log(frutas[fruta]);
+            if(frutas[fruta] == 'Pera'){
+                break;
+            }
+        }
+
+        let last_fruta = frutas[frutas.length - 1]
+
+        console.log(last_fruta);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

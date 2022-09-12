@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+        const carro = {
+            marca: 'Marca',
+            prec0: 0,
+        }
+
+
+        //Maneira errada
+        const honda = carro;
+        honda.marca = 'Honda';
+        honda.preco = 2000;
+
+        const fiat = carro;
+        fiat.marca = 'fiat'
+        fiat.preco = 3000;
+
+        // Construction function
+
+        function Carro(marca,preco,color){
+            this.marca = marca
+            this.preco = preco
+            this.color = color
+        }
+
+        const hondaa = new Carro('Tesla',100000,'white')
+        console.log(hondaa)
+
+    
+
+
+    </script>
+    
+</body>
+</html>
