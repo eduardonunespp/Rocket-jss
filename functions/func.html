@@ -29,6 +29,63 @@
         console.log(copo(10,10));
 
         
+        function perimetro(lado){
+            return lado * 4;
+        }
+
+        console.log(perimetro(4));
+
+        function nome_completo(pname,sname){
+            return pname + ' ' + sname;
+        }
+
+        console.log(nome_completo('Carlos','Eduardo'));
+
+        function par(num){
+            if(num %2 == 0){
+                return 'O número é par'
+            }
+            else{
+                return 'O número é ímpar'
+            }
+            
+        }
+
+    
+
+        console.log(par(11));
+
+        function tipo(dado){
+            return typeof(dado);
+        }
+
+        console.log(tipo(10.8));
+
+        function dados(dd){
+            return !!dd;
+        }
+
+        console.log(dados(true))
+
+        addEventListener('scroll', () => {
+            console.log('Carlos Eduardo');
+        })
+
+
+        var total_paises = 193;
+        function paises_vis(paises_num){
+            return `Ainda faltam ${total_paises - paises_num} paises para visitar`
+        }
+        function paises_javisited(paises_num){
+            return ` Já visitei ${paises_num} do total de ${total_paises}`
+        }
+
+        console.log(paises_vis(10));
+
+        console.log(paises_javisited(10));
+
+        
+        
 
         
 

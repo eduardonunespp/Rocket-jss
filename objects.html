@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        /*
+
+            Objects
+                Objeto
+                Propriedades / Atributos
+                Funcionalidades / Métodos
+
+        */
+
+        console.log({
+            name: 'Carlos',
+            name2: 'Eduardo',
+            idade: 18
+
+            }
+        )
+
+        console.log({
+            name: 'Carlos',
+            name2: 'Eduardo',
+            andar: function(){
+            console.log('andar');
+        }
+        })
+
+        const person = {
+            p_name: 'Carlos',
+            s_name: 'Eduardo',
+            nome_completo: function(){
+                return this.p_name + ' ' + this.s_name;
+            }
+            
+        }
+
+        console.log(person.nome_completo()); 
+
+        const car = {
+            preco: 1000,
+            nome: 'carro'
+        }
+
+        car.preco = 3000;
+
+        console.log(car.preco);
+
+
+        const dog = {
+            nome: 'Thor',
+            idade: 8,
+            raça: 'Labrador',
+            homem: false,
+            latir(){
+                if(this.homem == true){
+                    return 'Labrador latindo'
+                }else if(this.homem == false){
+                    return 'Labrador não latindo'
+            }
+        }
+    }
+
+    console.log(dog.latir())
+
+    </script>
+    
+</body>
+</html>

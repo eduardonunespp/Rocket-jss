@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(36, 36, 36);
+            margin: 0px;
+        }
+        .boxmain{
+            width: 20%;
+            background-color: rgb(58, 58, 58);
+            padding: 40px;
+            height: 700px;
+            overflow:auto;
+            
+            
+            
+        }
+
+        .box{
+            width: 100%;
+            height: 250px;
+            background-color: rgb(255, 255, 255);
+            margin-bottom: 5px;
+            
+        }
+        main{
+            width: 100%;
+            display: flex;
+            flex-wrap: row wrap;
+        }
+        .content{
+            background-color: rgb(200, 0, 255);
+            flex: 80%;
+            padding: 10px;
+            
+        }
+        header{
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            background-color: rgb(200, 0, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header h2{
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        nav{
+            background-color: black;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        nav a{
+            display: inline-block;
+            padding: 7px 20px;
+            text-decoration: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+           
+            border: 2px solid rgb(200, 0, 255);
+            margin: 0px 10px;
+            border-radius: 7px;
+            transition: 0.7s;
+
+        }
+
+        nav a:hover{
+            background-color: rgb(200, 0, 255);
+        }
+
+        @media (max-width: 870px) {
+            nav{
+                height: 300px;
+            }
+            nav a{
+                width: 90%;
+                margin-top: 10px;
+                text-align: center;
+            }
+            .content{
+                width: 70%;
+            }
+            .boxmain{
+                width: 30%;
+                padding: 5px;
+            }
+            .modal{
+              
+            }
+            .modal .bb{
+                width: 90%;
+                
+                
+                
+            }
+        }
+
+        .modal{
+            width: 500px;
+            height: 250px;
+            border-radius: 10px;
+            background-color: rgb(46, 46, 46);
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            
+            
+            
+        }
+
+        .bb{
+            width: 50%;
+            
+            
+        }
+
+        .bb input{
+            width: 100%;
+            padding: 10px 10px;
+            border-radius: 5px;
+            border: 2px solid rgb(200, 0, 255); 
+            margin: 3px 0px;
+        }
+
+        .cancel{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            right: -15px;
+            top: -15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .cancel p{
+            text-align: center;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(200, 0, 255);
+        }
+
+        .modal h2{
+            position: absolute;
+            left: 20px;
+            top: -5px;
+            font-family: Arial, Helvetica, sans-serif;
+            color:rgb(200, 0, 255);
+            font-size: 1.2em;
+        }
+
+        .modal label{
+            color: rgb(200, 0, 255);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8em;
+            margin-bottom: 0px;
+        }
+
+        .content .cadastrar{
+            padding: 10px 10px;
+            border-radius: 5px;
+            background-color: aliceblue;
+            color: rgb(200, 0, 255);
+            border: none;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+
+
+
+        }
+        .mainmodal{
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="mainmodal">
+    <div class="modal">
+        <button class="cancel" onclick="cancel()">X</button>
+        <h2>RocketSeat</h2>
+        <div class="bb">
+            <label for="">Nome:</label>
+            <input type="text" name="" id=""> <br>
+            <label for="">Email:</label>
+            <input type="text" name="" id="">
+        </div>
+        <div class="bb">
+            <label for="">CPF:</label>
+            <input type="text" name="" id=""> <br>
+            <label for="">Senha:</label>
+            <input type="text" name="" id="">
+        </div>
+    </div>
+</div>
+
+    <header>
+        <h2>RocketSeat</h2>
+    </header>
+    <nav>
+       <div>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+           
+       </div>
+       <div>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+       </div>
+       <div></div>
+    </nav>
+    <main class="">
+    <div class="boxmain">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="content">
+        <button class="cadastrar" onclick="cadas()">Cadastrar</button>
+    </div>
+    </main>
+
+    <script>
+        function cadas(){
+            let mol = document.getElementsByClassName("mainmodal");
+
+            mol[0].style.display = 'block';
+        }
+
+        function cancel(){
+            let mol = document.getElementsByClassName('mainmodal');
+
+            mol[0].style.display = 'none'
+        }
+    </script>
+    
+</body>
+</html>
