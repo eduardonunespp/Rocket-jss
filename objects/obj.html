@@ -8,6 +8,16 @@
 </head>
 <body>
 
+
+    <ul>
+        <li class="teste">Item1</li>
+        <li class="teste">Item2</li>
+        <li>Item3</li>
+    </ul>
+
+
+
+
     <script>
 
 
@@ -35,7 +45,172 @@
         }
 
         const hondaa = new Carro('Tesla',100000,'white')
-        console.log(hondaa)
+        console.log(hondaa);
+
+        function carroM(marca, precoInicial){
+            const taxa = 1.2;
+            const precoFinal = precoInicial * taxa;
+            this.marca = marca;
+            this.preco = precoFinal;
+            console.log(this)
+
+        }
+
+
+        let Ncarro = new carroM('Tesla',2000);
+        console.log(Ncarro);
+
+
+        /*const Dom = {
+            seletor: 'li',
+            element(){
+                return document.querySelector(this.seletor);
+                
+            },
+            ativar(){
+                return this.element().classList.add('Teste')
+            }
+        }*/
+
+        /*function Dom(sel){
+            this.seletor = sel;
+            this.element = function(){ 
+                return document.querySelector(this.seletor);
+                
+            }
+            this.ativar = function(classe){
+                return this.element().classList.add(classe)
+            }
+        }
+        */
+
+        /*
+        Dom.seletor = 'ul'
+        console.log(Dom.ativar());
+        */
+
+        /*let teste1 = new Dom('li');
+        let teste2 = new Dom('ul');
+        console.log(teste1.ativar('teste1'));
+        console.log(teste2.ativar());
+
+
+        function pessoa(nome,idd){
+            this.nome = nome
+            this.idade = idd
+            this.andar = function(){
+                console.log(this.nome + ' andou')
+            }
+        }
+        
+
+        let pessoa1 = new pessoa('Eduardo',18)
+
+        console.log(pessoa1);
+
+        */
+
+        /*
+        const joao = new Pessoa('João',20);
+        const maria = new Pessoa('Maria',25);
+        const bruno = new Pessoa('Bruno',15);
+        */
+
+
+        {
+            function Dom(selector){
+                const elementList = document.querySelectorAll(selector);
+                this.elements = elementList;
+                this.addClass = function(classe){
+                    elementList.forEach((element) => {
+                        element.classList.add(classe);
+                    })
+                }
+                this.removeClass = function(classe){
+                    elementList.forEach((element) => {
+                        element.classList.remove(classe);
+                    })
+            }
+
+        }
+
+
+        const listaItens = new Dom('li');
+        console.log(listaItens.removeClass('teste'))
+        console.log(listaItens.addClass('Ativo'))
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
