@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <script>
+
+        // const comida = 'Pizza';
+        // const agua = new String('Agua  ');
+
+        // console.log(agua.length);
+
+        // const frase = 'A melhor comida';
+
+        // console.log(frase[frase.length])
+        // console.log(frase.charAt(frase.length))
+
+        const frase = 'A melhor linguagem é ';
+        const linguagem = 'JavaScript';
+
+        const fraseFinal = frase.concat(linguagem, '!!', 'Oi sdhdisuhds');
+
+        const fruta = 'Banana';
+        const listaFrutas = 'Melancia, Banana, Laranja';
+
+        console.log(listaFrutas.includes(fruta, 14));
+
+        console.log(fruta.endsWith('na'));
+        console.log(fruta)
+
+        const transacao1 = 'Depósito de cliente';
+        const transacao2 = 'Depósito de fornecedor';
+        const transacao3 = 'Taxa de camisas';
+
+        console.log(transacao1.slice(0,8));
+
+        console.log(fruta.indexOf('na'));
+
+        const preco = 'R$ 99,00';
+
+        const listaPrecos = ['R$ 99', 'R$ 199', 'R$ 12000'];
+
+        listaPrecos.forEach((item) => {
+        console.log(item.padStart(10, '-'));
+        })
+
+        const frase2 = 'Ta';
+
+        frase2.repeat(5); // TaTaTaTaTa
+
+        let listaItens = 'Camisas Bonés Calças Bermudas Vestidos Saias';
+
+        listaItens = listaItens.replace(/[ ]+/g, ', ');
+
+        console.log(listaItens);
+        const arrayLista = listaItens.split(', ');
+
+        console.log(arrayLista)
+
+        const htmlText = '<div>O melhor item</div><div>A melhor lista</div>';
+        const htmlArray = htmlText.split('div');
+        const novoHtml = htmlArray.join('section');
+
+        console.log(htmlText);
+        console.log(htmlArray);
+        console.log(novoHtml);
+
+        const frutasArray = ['Banana', 'Melancia', 'Laranja'];
+
+        const sexo1 = 'Feminino';
+        const sexo2 = 'feminino';
+        const sexo3 = 'FEMININO';
+
+        console.log(sexo1.toUpperCase() === 'FEMININO');
+
+        const valor = '  R$ 23.00   ' 
+        valor.trim(); // 'R$ 23.00'
+        valor.trimStart(); // 'R$ 23.00   '
+        valor.trimEnd(); // '  R$ 23.00'
+
+
+        //Exercicios 
+        const transacoes = [
+        {
+            descricao: 'Taxa do Pao',
+            valor: 'R$ 39',
+        },
+        {
+            descricao: 'Taxa do Mercado',
+            valor: 'R$ 129',
+        },
+        {
+            descricao: 'Recebimento do Cliente',
+            valor: 'R$ 99',
+        },
+        {
+            descricao: 'Taxa do Banco',
+            valor: 'R$ 129'
+        },
+        {
+            descricao: 'Recebimento de Taxa do Cliente',
+            valor: 'R$ 49',
+        },
+        ]
+
+        
+        
+
+        let taxaTotal = 0;
+        let recebimentoTotal = 0
+        transacoes.forEach((item) => {
+            const numeroLimpo = +item.valor.replace('R$ ','');
+            if(item.descricao.slice(0,4) === 'Taxa'){
+                taxaTotal += numeroLimpo;
+            }
+            else{
+                recebimentoTotal += numeroLimpo;
+            }
+        })
+
+        console.log(taxaTotal);
+        console.log(recebimentoTotal);
+
+        {
+
+            const transportes = 'Carro;Avião;Trem;ônibus;Bicicleta'
+
+            console.log(transportes.split(' '))
+
+        }
+
+        {
+            const html = `<ul>
+                            <li><span>Sobre</span></li>
+                            <li><span>Sobre</span></li>
+                            <li><span>Sobre</span></li>
+                          </ul>`;
+
+            const subs = html.split('span');
+            const add = subs.join('a');
+            console.log(subs);
+            console.log(add);
+        }
+
+        {
+            const frase = 'melhor do mundo';
+            console.log(frase.slice(-1))
+        }
+
+  
+
+    </script>
+
+
+
+
+    
+</body>
+</html>
