@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+
+
+            console.log(Number.isNaN(NaN))
+            console.log(Number.isInteger(10))
+
+
+            let num = '10.5'
+
+            console.log(parseFloat(num))
+            console.log(parseFloat('100.27'))
+            console.log(parseInt(num))
+            console.log(parseInt('99.80', 10))
+            console.log(parseInt(5.349847, 'String'))
+
+
+            const carro = 10.209;
+            console.log(+carro.toFixed(1))
+
+            let value = 5.50;
+            value = value.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+            console.log(value)
+
+            console.log(Math.PI)
+
+            console.log(Math.abs(3 - 7))
+            console.log(Math.round(5.6))
+
+            console.log(Math.max(5.8,1,10))
+
+            console.log(Math.random() * 100) 
+
+            const aleatorio = Math.round(Math.random() * 100);
+            
+            console.log(aleatorio)
+
+            console.log(Math.floor(Math.random() * (72 - 32 + 1)) + 32)
+
+            //Atividade
+
+            console.log(Math.round(Math.random() * (2000 - 1050 + 1) +1050))
+
+            let numeros = '4, 5, 20, 8, 9'
+            console.log(Math.max(4, 4, 20, 9, 9));
+
+            const arrayNumeros = numeros.split(', ')
+            const numeroMaximo = Math.max(...arrayNumeros);
+
+            console.log(numeroMaximo)
+
+
+
+            /*let num2;
+            let int;
+            arrayNumeros.forEach((item) => {
+                int = parseInt(item);
+                
+                
+            
+            })
+            console.log(Math.max())
+            */
+
+            const listaPrecos = ['R$ 59,99', ' R$ 100,222',
+                                 'R$ 230 ', 'r$ 200'];
+
+            
+            function limparPreco(preco){
+                preco = +preco.toUpperCase().replace('R$','').trim().replace(',','.')
+                preco = +preco.toFixed()
+                return preco;
+            }
+
+           
+
+            let precoTotal = 0;
+            listaPrecos.forEach((item) => {
+                precoTotal += limparPreco(item);
+            })
+
+            console.log(precoTotal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}))
+
+
+            
+            
+
+            
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

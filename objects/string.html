@@ -155,6 +155,30 @@
             console.log(frase.slice(-1))
         }
 
+
+        {
+            const transacoes = ['Taxa de banco', 'TAXA DE PÃO,',' taxa do mercado','depósito Bancário',' TARIFA especial'];
+
+
+            var taxasTotal = 0;
+            transacoes.forEach((item) => {
+                item = item.toLowerCase();
+                item = item.trim();
+                item = item.slice(0,4);
+
+                if(item === 'taxa')
+                    taxasTotal++
+
+                    
+                
+            })
+
+            console.log(taxasTotal);
+        }
+
+        
+
+
   
 
     </script>
