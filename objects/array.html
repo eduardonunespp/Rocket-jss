@@ -8,6 +8,12 @@
 </head>
 <body>
 
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+
     <script>
 
          const instrumentos = ['Guitarra', 'Baixo', 'Violão'];
@@ -21,8 +27,199 @@
          carros[3] = 'Kia';
          carros[20] = 'Kia';
 
-         console.log(carros.length)
+         console.log(carros.length);
 
+         let arr = ['a','B','b '];
+
+         //arr[10] = 'c';
+
+         console.log(arr);
+
+         console.log(Math.round(1.6));
+
+
+        
+         arr.forEach((item) => {
+            console.log(item.toLowerCase().trim());    
+         })
+
+         const carros2 = new Array("A","B","C");
+         console.log(carros2);
+
+         {
+             const li = document.querySelectorAll('li');
+
+             console.log(li);
+
+             const ArrayLi = Array.from(li);
+
+             console.log(ArrayLi);
+
+         }
+
+         {
+             const obj = {
+
+                0: 'Carlos',
+                1: 'Eduardo',
+                2: 'Teste',
+                length: 3,
+
+             }
+
+             const objArray = Array.from(obj);
+
+             console.log(objArray);
+         }
+
+        let arr2 = Array.of(10);
+        console.log(arr2);
+        let arr3 = Array(10);
+        console.log(arr3);
+
+        {
+
+
+            let arr = ['banana','goiaba',['Manga','Pera']];
+            console.log(arr.length);
+            console.log(arr[0].length);
+            console.log(arr[2].length);
+            console.log(arr[2][0].length);
+
+        }
+
+        //Métodos Modificadores 
+
+        {
+            const alfa = ['Carro','Moto','Avião'];
+            console.log(alfa.sort());
+
+            const num = [1,49,46,24,36,100];
+
+            console.log(num.sort());
+        }
+
+        {
+            const color = ['Azul','Vermelho','Cinza'];
+            color.unshift('Laranja');
+            console.log(color);
+            color.push('Verde','Branco');
+            console.log(color);
+            console.log(color.length);
+        }
+
+        {
+            const color = ['Azul','Vermelho','Cinza'];
+            color.pop(); 
+            console.log(color);
+
+            const color2 = ['Azul','Vermelho','Cinza'];
+            color2.shift();
+            console.log(color2)
+        }
+
+        const color = ['Azul','Vermelho','Cinza'];
+        console.log(color.reverse());
+
+        {
+            const color = ['Azul','Vermelho','Cinza'];
+            color.splice(1,0, 'Amarelo');
+            console.log(color);
+        }
+
+        {
+            const arr = ['Item1','Item2','Item3','Item4','Item5'];
+            arr.fill('Augusto',0,3);
+            console.log(arr);
+        }
+
+        //Métodos de Acesso
+
+        {
+            const transport1 = ['Barco','Avião'];
+            const transport2 = ['Carro','Moto'];
+            console.log(transport1.concat(transport2))
+            const MaisTransportes = [].concat(transport1, transport2, 'Van');
+            console.log(MaisTransportes);
+        }
+
+        {
+            const linguagens = ['html','css','js','php','python','js'];
+            console.log(linguagens.includes('css'));
+            console.log(linguagens.indexOf('js'));
+            console.log(linguagens.lastIndexOf('js'));
+            console.log(linguagens.join('.'));
+
+            let htmlString = '<h2>Título Principal</h2>'
+            htmlString = htmlString.split('h2');
+            htmlString = htmlString.join('h1');
+            console.log(htmlString);
+
+
+        }
+
+        {
+            const linguagens = ['html','css','js','php','python','js'];
+            console.log(linguagens.slice(1));
+            console.log(linguagens.slice(1,5));
+        }
+        {
+            const linguagens = ['html','css','js','php','python','js'];
+            
+            const cloneLinguagens = linguagens.slice();
+
+            linguagens.pop();
+
+            console.log(cloneLinguagens);
+
+
+        }
+
+
+        //Atividades 
+
+        const comidas = ['Pizza','Frango','Carne','Macarrão'];
+
+        let remove_first = comidas.shift();
+        console.log(remove_first);
+        let remove_last = comidas.pop();
+        console.log(remove_last);
+
+       
+        comidas.unshift('Arroz')
+        console.log(comidas);
+        comidas.push('Batata')
+        console.log(comidas);
+
+        const estudantes = ['Marcio','Brenda','Joana','Kleber','Julia'];
+
+        console.log(estudantes.sort());
+        console.log(estudantes.reverse());
+        console.log(estudantes.includes('Joana'));
+        console.log(estudantes.includes('Juliana'));
+
+        let html = `<section>
+                        <div>Sobre</div>
+                        <div>Produtos</div>
+                        <div>Contato</div>
+                    </section>`
+         
+        let htmlalt = html.split('section')
+        htmlalt = htmlalt.join('ul')
+        console.log(htmlalt)
+
+
+        {
+        let carros = ['Ford','Fiat','VW','Honda'];
+
+        let cloneCarros = carros.slice();
+
+        carros.pop();
+
+        console.log(carros);
+
+        console.log(cloneCarros)
+        }
 
     </script>
     
