@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(73, 73, 73);
+        }
+        h2{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: orange;
+            animation-name: ball;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            
+        }
+        @keyframes ball {
+
+            from{
+                transform: translateX(0px)
+            }
+            to{
+                transform: translateX(800px)
+            }
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Título</h2>
+
+    <div class="box"></div>
+
+    <script>
+        let num1 = 10;
+        let num2 = 20;
+        let soma = num1 + num2;
+
+console.log(`O valor de ${num1} e ${num2} é igual a ${soma}`)
+    </script>
+    
+</body>
+</html>

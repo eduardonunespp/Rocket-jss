@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            margin: 0px;
+        }
+
+        .box{
+            width: 200px;
+            height: 730px;
+            background-color: rgb(99, 99, 99);
+            border-radius: 10px;
+            transition: 1s;
+            transform: translateX(-210px);
+            display: inline-block;
+        }
+
+        .box .btn{
+
+            padding: 10px;
+            border-radius: 7px;
+            width: 50px;
+            height: 50px;
+            border: none;
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgb(0, 239, 0);
+
+        }
+        .box .btn2{
+
+            padding: 10px;
+            border-radius: 7px;
+            width: 50px;
+            height: 50px;
+            border: none;
+            position: absolute;
+            right: -30px;
+            top: 55%;
+            
+            background-color: rgb(239, 0, 0);
+
+        }
+
+        .box2{
+            width: 30px;
+            height: 50px;
+            background-color: black;
+            display: inline-block;
+        }
+
+        .btn2{
+            position: absolute;
+            right: 10px;
+        }
+
+        .blue{
+            transform: translateX(0px);
+            
+        }
+
+        .red{
+            transform: translate(-250px);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="box">
+
+        <button class="btn"></button>
+        <button class="btn2"></button>
+
+    </div>
+
+
+
+
+
+    
+   
+    <script>
+        
+
+        //prototype
+
+            let btn = document.getElementsByClassName('btn')
+
+            let btn2 = document.getElementsByClassName('btn2')
+
+            btn[0].addEventListener('click', () => {
+
+            let bb = document.getElementsByClassName('box');
+
+            bb[0].classList.add('blue');
+
+            function teste(){
+                return 'teste';
+            }
+
+
+        })
+
+        btn2[0].addEventListener('click', () => {
+
+            
+
+        let bb = document.getElementsByClassName('box');
+
+        bb[0].classList.remove('blue');
+
+        function teste(){
+            return 'teste';
+        }
+
+        })
+
+            
+
+            console.log(teste.prototype);
+
+
+
+            function pessoa(res){
+                this.nome = res;
+                this.andar = function(){
+                    return this.nome + ' vai andar'
+                }
+            }
+
+            const edu = new pessoa('Eduardo')
+
+
+            pessoa.prototype.andar = function() {
+                return this.nome + ' andou'
+            }
+
+            pessoa.prototype.nadar = function() {
+                return this.nome + ' nadou'
+            }
+
+
+
+            
+
+
+            
+
+          
+
+
+    </script>
+    
+</body>
+</html>
