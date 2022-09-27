@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <section class="curso">
+        <h1>Web Design Completo</h1>
+        <p>Este curso é para quem deseja entrar ou já está no mercado de criação de websites.</p>
+        <span class="aulas">80</span>
+        <span class="horas">22</span>
+      </section>
+      <section class="curso">
+        <h1>WordPress Como CMS</h1>
+        <p>No curso de WordPress Como CMS, você aprende do zero como pegar qualquer site em HTML e torná-lo totalmente gerenciável com a plataforma do WordPress.</p>
+        <span class="aulas">46</span>
+        <span class="horas">9</span>
+      </section>
+      <section class="curso">
+        <h1>UI Design Avançado</h1>
+        <p>Este é um curso avançado de User Interface Design.</p>
+        <span class="aulas">55</span>
+        <span class="horas">15</span>
+      </section>
+    
+</body>
+
+    <script>
+
+        const cursos = document.querySelectorAll('.curso');
+        const arrayCursos = Array.from(cursos)
+        console.log(arrayCursos);
+
+        const objectsCursos = arrayCursos.map((cursos) => {
+            const titulos = cursos.querySelector('h1').innerHTML;
+            const descricao = cursos.querySelector('p').innerText;
+            const aula = cursos.querySelector('.aulas').innerHTML;
+            const horas = cursos.querySelector('.horas').innerHTML;
+            return{
+                titulos,
+                descricao,
+                aula,
+                horas,
+            }
+        })
+        console.log(objectsCursos)
+
+        const numeros = [3, 44, 333, 23, 122, 322, 33];
+
+        const maioresQue100 = numeros.filter((num) => {
+            return num > 100;
+        })
+
+        console.log(maioresQue100);
+
+        const instrumentos = ['Guitarra','Baixo','Bateria','Teclado'];
+
+        const possuiBaixo = instrumentos.some((item) => {
+            return item === 'Baixo';
+        })
+
+        console.log(possuiBaixo);
+
+        {
+            const compras = [
+                {
+                    item: 'Banana',
+                    preço: 'R$ 4,99'
+                },
+                {
+                    item: 'Ovo',
+                    preço: 'R$ 2,99'
+                },
+                {
+                    item: 'Carne',
+                    preço: 'R$ 25,49'
+                },
+                {
+                    item: 'Refrigerante',
+                    preço: 'R$ 5,35'
+                },
+                {
+                    item: 'Queijo',
+                    preço: 'R$ 10,60'
+                },
+            ]
+
+            /*precoTotal = 0;
+            compras.forEach((item) => {
+                precoTotal = +item.preço.replace(',','.').replace('R$','');
+                precoTotal += precoTotal;
+                console.log(precoTotal)
+            })*/
+
+            const valorTotal = compras.reduce((acumulador, item) => {
+                const precoLimpo = +item.preço.replace('R$', '').replace(',', '.')
+                return acumulador + precoLimpo;
+                
+            }, 0)
+
+            console.log(valorTotal)
+
+        }
+
+
+
+
+    </script>
+
+</html>

@@ -177,11 +177,77 @@
 
                 console.log(temUva)
 
+                const every = frutas.every((fruta) => {
+                    return fruta;
+                })
+
+                console.log(every);
+
+                let numeros = [8, 9, 40, 3, 6, 100, 248];
+
+                const aval = numeros.every((n) => {
+                    return n >= n;
+                })
+
+                console.log(aval);
 
 
+            }
 
+            {
 
+                const frutas = ['Banana','Pêra','Uva'];
+                let numeros = [8, 9, 40, 3, 6, 100, 248];
 
+                const indexFruta = frutas.findIndex((fruta) => {
+                    return fruta === 'Pêra';
+                })
+
+                console.log(indexFruta);
+
+                const find = numeros.find((num) => {
+                    return num >= 90;
+                })
+
+                console.log(find)
+            }
+
+            {
+
+                const frutas = ['Banana',0,NaN,'Pêra','Uva', undefined];
+
+                const arrayFrutas = frutas.filter((item) => {
+                    console.log(item);
+                    return item;
+                })
+
+                console.log(arrayFrutas);
+
+                const aulas = [
+                {
+                   nome: 'HTML 1',
+                    min: 15
+                },
+                   {
+                    nome: 'HTML 2',
+                    min: 10
+                  },
+                {
+                    nome: 'CSS 1',
+                    min: 20
+                },
+                {
+                    nome: 'JS 1',
+                    min: 25
+                },
+                ]
+
+                const time = aulas.filter((aula) => {
+                    return aula.min >= 15;
+
+                })
+
+                console.log(time);
 
             }
 
