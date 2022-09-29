@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--<ul>
+        <li>Item</li>
+        <li class="ativo">Item</li>
+        <li class="ativo">Item</li>
+        <li>Item</li>
+    </ul>
+    -->
+
+    <ul>
+        <li>Item</li>
+        <li class="ativo">Item</li>
+        <li class="ativo">Item</li>
+        <li>Item</li>
+    </ul>
+
+    <script>
+
+            const perimetroQuadrado = new Function('lado', 'return lado * 4');
+
+            function soma(a,b){
+                return a + b;
+            }
+            console.log(soma.length)
+            console.log(soma.name)
+
+            function descricaoDeCarro(velocidade){
+                console.log(this.marca + ' ' + this.ano + ' ' +velocidade);
+            }
+
+            descricaoDeCarro.call({marca: 'Honda', ano: 2010}, 200);
+
+            function darOi(nome){
+                console.log('Oi para você ' + nome)
+            }
+            darOi.call({}, 'Eduardo')
+
+            {
+
+                const frutas = ['Banana','Maçã','Morango'];
+                const marcas = ['Fiat', 'Ford', 'Tesla'];
+
+                marcas.forEach
+                marcas.forEach.call(marcas, (item) => {
+                    console.log(item)
+                });
+                marcas.forEach.call(frutas, (item) => {
+                    console.log(item)
+                })
+
+            }
+
+            function Dom(seletor) {
+                console.log(this)
+                this.element = document.querySelector(seletor);
+
+            }
+
+            Dom.prototype.ativo = function(classe){
+                this.element.classList.add(classe)
+            }
+
+            //const ul = new Dom('ul');
+
+            //console.log(ul);
+
+            const li = {
+                element: document.querySelector('li'),
+            }
+
+
+            //ul.ativo.call(li, 'ativo');
+
+            Dom.prototype.ativo.call(li, 'ativar');
+
+            {
+                const frutas = ['Uva', 'Maçã', 'Banana'];
+
+                Array.prototype.mostrarThis = function(){
+                    console.log(this);
+                }
+
+                Array.prototype.pop.call(frutas)
+
+                console.log(frutas)
+            }
+
+            {
+                const li = document.querySelectorAll('li');
+
+                //const filtro = Array.prototype.filter.call(li, (item) => {
+                    //return console.log(item.classList.contains('ativo'));
+
+                //})
+
+                const arrayli = Array.from(li);
+
+                const filtro = arrayli.filter((item) => {
+                    return item.classList.contains('ativo');
+                })
+
+                console.log(filtro);
+
+                console.log(li);
+            }
+
+            //apply
+
+            {
+                const numeros = [1,56,298,38,398,577,200,376];
+
+                console.log(Math.max.apply(null, numeros))
+            }
+
+            {
+                const li = document.querySelectorAll('li');
+
+                function itempossuiAtivo(item){
+                    return item.classList.contains('ativo');
+                }
+
+                const filtro1 = Array.prototype.filter.apply(li, [itempossuiAtivo]);
+                const filtro2 = Array.prototype.filter.call(li, itempossuiAtivo);
+
+
+                console.log(filtro1);
+                console.log(filtro2);
+
+            }
+
+            //bind.
+
+            {
+
+                const li = document.querySelectorAll('li');
+                /*function itempossuiAtivo(item){
+                    return item.classList.contains('ativo');
+                }*/
+                const filtro = Array.prototype.filter.bind(li, (item) => {
+                    return item.classList.contains('ativo');
+                });
+
+                console.log(filtro())
+
+
+                const $ = document.querySelectorAll.bind(document);
+
+                console.log($('ul'))
+
+            }
+
+            const carro = {
+                marca: 'ford',
+                ano: 2018,
+                acelerar: function(aceleracao, tempo){
+                    return `${this.marca} acelerou ${aceleracao} em ${tempo} segundos`
+                }
+
+
+            }
+
+            const honda = {
+                marca: 'honda',
+            }
+
+            {
+
+            const aceleracaoTempo = carro.acelerar.bind(honda);
+
+            console.log(aceleracaoTempo(350, 20));
+
+            //console.log(aceleracaoTempo);
+
+            }
+
+            {
+
+                function imc(altura, peso){
+                    return peso / (altura * altura)
+                }
+
+                console.log(imc(1.80, 72));
+
+                const imc180 = imc.bind(null, 1.80);
+
+                console.log(imc180(72));
+
+                
+            }
+
+            
+
+
+
+
+            
+            
+
+           
+
+    </script>
+    
+</body>
+</html>
