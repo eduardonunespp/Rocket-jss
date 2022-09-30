@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        const pessoa = {
+            nome: 'Eduardo',
+            idade: 18,
+        }
+
+        console.log(pessoa);
+
+        const pessoa2 = new Object({
+            nome: 'Eduardo',
+        })
+
+        console.log(pessoa2);
+
+        
+            let carro = {
+                rodas: 4,
+                init(valor){
+                    this.marca = valor
+                    return this;
+                },
+                acelerar() {
+                    return this.marca + ' acelerou'
+                },
+                buzinar(){
+                    return this.marca + ' buzinou'
+                }
+
+            }
+
+            /*let honda = Object.create(carro)
+            honda.marca = 'Tesla';*/
+
+
+            /*console.log(carro);
+
+            carro.init('Tesla')
+
+            console.log(carro);*/
+
+            const honda = Object.create(carro).init('Honda');
+            console.log(honda.acelerar())
+
+            console.log(honda.buzinar())
+
+            
+                const acelerar = {
+                    acelerar() {
+                        return 'acelerar'
+                    },
+                }
+                const buzinar = {
+                    buzinar(){
+                        return 'buzinar'
+                    }
+                }
+
+                const moto = {
+                    rodas: 2,
+                    color: 'preta'
+                }
+                const carro2 = {
+                    rodas: 4,
+                    color: 'white'
+                }
+
+                Object.assign(moto, acelerar, carro2)
+
+                console.log(moto)
+
+
+            {
+
+                const moto = {
+                
+                }
+
+                Object.defineProperties(moto, {
+                    rodas: {
+                        value: 4,
+                        configurable: false,
+                        writable: true,
+                    },
+                    color: {
+                        value: 'white',
+                        configurable: true,
+                    }
+                })
+
+                delete moto.color;
+                moto.rodas = 5;
+
+                console.log(moto)
+
+
+
+            }
+
+            {
+                const moto = {}
+
+                
+
+                Object.defineProperties(moto, {
+                    rodas: {
+                        get() {
+                            return  this._rodas
+                        },
+                        set(valor){
+                            this._rodas = valor * 4 + ' Total de Rodas'; 
+                        }
+                    }
+                })
+
+                moto.rodas = 2;
+
+                console.log(moto);
+            }
+
+            
+                const config = {}
+
+                
+
+                Object.defineProperties(config, {
+                    nome: {
+                        value: 'nome',
+                        configurable: true,
+                    }
+                })
+
+                const inner = Object.getOwnPropertyDescriptor(window, 'innerHeight');
+
+                console.log(inner)
+
+                console.log(Object.keys(config))
+
+
+
+                {
+
+                
+                    const frutas1 = ['Banana']
+                    
+                    console.log(Object.getPrototypeOf(frutas1));
+                    
+                    const frutas2 = ['Banana']
+
+                    const nova_fruta = frutas1;
+                    
+                    console.log(Object.is(frutas1, nova_fruta))
+
+
+
+                }
+            
+
+                
+            
+
+            
+        
+
+
+    </script>
+
+    
+</body>
+</html>
