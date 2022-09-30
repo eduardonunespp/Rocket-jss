@@ -27,7 +27,7 @@
         const totalCaractere = Array.prototype.reduce.call(paragrafos, (acumulador, item) => {
             return acumulador + item.innerText.length;
         }, 0)
-
+ 
         console.log(totalCaractere);
 
         {
@@ -49,6 +49,16 @@
 
             console.log(cursosJS, cursosCSS, cursosHTML);
         }
+
+        function constt(nome,idade){
+            this.nome = nome;
+            this.idade = idade;
+
+
+        }
+
+        const person = new constt('Eduardo',18)
+        console.log(person);
 
     </script>
     
