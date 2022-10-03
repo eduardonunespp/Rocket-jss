@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/034fe8f0bb.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        *{
+            box-sizing: border-box;
+            font: var(--fontprimary);
+        }
+
+        :root{
+            --colorprimary: rgb(11, 9, 58);
+            --colorsecundary: rgb(12, 80, 136);
+            --fontprimary: 'Roboto', sans-serif;
+        }
+
+        body{
+            background-color: var(--colorprimary);
+            font-family: var(--fontprimary);
+            margin: 0px;
+            
+        }
+
+
+
+        .box{
+            width: 340px;
+            height: 380px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 30px 40px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .box h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.7em;
+            color: var(--colorprimary);
+            font-weight: bold;
+            font-family: var(--fontprimary);
+        }
+
+        .box input[type='number']{
+            width: 100%;
+            padding: 12px;
+            border-radius: 3px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+        .box label{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8em;
+            color: var(--colorprimary);
+            font-weight: normal;
+            
+        }
+
+        #buttonp{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: var(--colorsecundary);
+            border-radius: 3px;
+            color: white;
+            font-weight: bold;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: 0.7s;
+            font-size: 0.8em;
+        }
+
+        #buttonp:hover{
+            background-color: rgb(9, 52, 87);
+        }
+        .addcolor{
+            background-color: red;
+        }
+
+        .popup_erro{
+            width: 100%;
+            background-color: rgb(255, 60, 0);
+            padding: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.7s;
+        }
+        .popup_erro{
+            font-family: var(--fontprimary);
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            transform: translateY(-55px);
+
+        }
+        .pop_active{
+            transform: translate(0px);
+            
+        }
+        .popup_erro #button_modal{
+            position: absolute;
+            right: 10px;
+            padding: 10px;
+            border-radius: 7px;
+            background-color: rgb(255, 60, 0);
+            border: none;
+            color: white;
+            cursor: pointer;
+            
+        }
+        .fa-xmark{
+            font-size: 1.2em;
+        }
+        .fa-arrow-right{
+            margin: 0px 5px;
+        }
+
+        .modal{
+            width: 400px;
+            height: 200px;
+            background-color: rgb(236, 236, 236);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+            text-align: center;
+        }
+        .modal p{
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--colorsecundary)
+        }
+        .modal button{
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            border-radius: 15px;
+            border: none;
+            padding: 5px 10px;
+            background-color: rgb(255, 60, 0);
+            color: white;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="popup_erro">
+         <p>Por favor, digite um número válido</p>
+         <button id="button_modal"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="box">
+
+        <h1>Cálculo IMC</h1>
+
+        <label for="">Peso/Kg</label><br>
+        <input type="number" id="num_peso" placeholder="Ex: 60"><br>
+        <label for="">Altura</label><br>
+        <input type="number" id="num_alt" placeholder="Ex: 1.65"><br>
+
+        <button id="buttonp">Calcular IMC <i class="fa-solid fa-arrow-right"></i></button>
+
+    
+    </div>
+
+    <div class="modal">
+
+        <p id="imc_value">Seu IMC é de: 10</p>
+
+        <button id="cancel"><i class="fa-solid fa-xmark"></i></button>
+        
+        
+    </div>
+
+   
+
+
+    <script>
+       
+
+        const btn = document.getElementById('buttonp');
+      
+        
+        btn.addEventListener('click', () => {
+
+           
+            const popup = document.getElementsByClassName("popup_erro")
+            const peso = document.getElementById('num_peso').value;
+            const alt = document.getElementById('num_alt').value;
+            const modal = document.getElementsByClassName('modal');
+            const pesoint = Number(peso);
+            const altint = Number(alt);
+
+            const imc = peso / alt**2
+
+            console.log(imc);
+
+            if(imc >= 40){
+                popup[0].classList.add("pop_active");
+            }   
+
+            modal[0].style.display = 'block';
+
+        })
+
+        const btn_modal = document.getElementById("button_modal");
+
+        btn_modal.addEventListener("click", () => {
+            const popup = document.getElementsByClassName("popup_erro")
+            popup[0].classList.remove("pop_active");
+        })
+
+        const calcel = document.getElementById('calcel');
+
+        cancel.addEventListener('click', () => {
+            const modal = document.getElementsByClassName('modal');
+            modal[0].style.display = 'none';
+        })
+
+    </script>
+    
+</body>
+</html>

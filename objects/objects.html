@@ -165,6 +165,84 @@
 
 
                 }
+
+                {
+
+                    //seal
+                    //freezer
+                    //preventExtensions
+
+                    const carro = {
+                        marca: 'Ford',
+                        ano: 2018,
+                    }
+
+                    Object.preventExtensions(carro);
+
+                    carro.marca = 'BMW';
+
+                    carro.portas = 4;
+
+                    console.log(carro)
+
+                    const frutas1 = ['Banana','Maçã'];
+
+                    console.log(frutas1.toString())
+
+                    function somar(a,b){
+                        return a * b;
+                    }
+                    console.log(Object.prototype.toString.call(frutas1));
+
+                
+                    
+                }
+
+                let arr = [1,2,3,4];
+                    let str = 'String';
+
+                //Atividades 
+
+                function type_of(value){
+                    return Object.prototype.toString.call(value);
+                }
+
+                console.log(type_of(str));
+
+                const quadrado = {
+                    lados: 4,
+                }
+
+                Object.freeze(quadrado);
+
+                //quadrado.vertices = 4;
+
+                console.log(quadrado);
+
+                const configuracao = {
+                    width: 800,
+                    height: 600,
+                    background: '#333',
+                }
+
+                Object.freeze(configuracao);
+
+                const imu = {}
+
+                Object.defineProperties(imu, {
+                    name: {
+                        value: 'volvo',
+                        configurable: false,
+                        writable: false,
+                    }
+                })
+
+                console.log(imu);
+
+                console.log(Object.getOwnPropertyNames(String.prototype));
+                console.log(Object.getOwnPropertyNames(Array.prototype));
+
+
             
 
                 
