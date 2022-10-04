@@ -38,7 +38,7 @@
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -70%);
+            transform: translate(-50%, -50%);
         }
 
         .box h1{
@@ -87,9 +87,7 @@
         #buttonp:hover{
             background-color: rgb(9, 52, 87);
         }
-        .addcolor{
-            background-color: red;
-        }
+    
 
         .popup_erro{
             width: 100%;
@@ -128,26 +126,27 @@
             margin: 0px 5px;
         }
 
+
         .modal{
             width: 400px;
             height: 200px;
             background-color: rgb(236, 236, 236);
             position: absolute;
-            left: 0%;
+            left: 50%;
             top: 50%;
-            transform: translate(-110%, 70%);
+            transform: translate(-50%, -50%);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             transition: 1.2s;
+            display: none;
         }
-        .modal_center{
-            left: 50%;
-            transform: translate(-50%, 70%);
-        }
+        
         .modal p{
             font-size: 1.2em;
             font-weight: bold;
@@ -165,6 +164,8 @@
             cursor: pointer;
             
         }
+
+       
     </style>
 </head>
 <body>
@@ -190,12 +191,13 @@
 
     <div class="modal">
 
-        <p id="imc_value">Seu IMC é de: 10</p>
+        <p id="imc_value">Seu IMC é de:</p>
 
         <button id="cancel"><i class="fa-solid fa-xmark"></i></button>
         
         
     </div>
+
 
    
 
@@ -209,6 +211,7 @@
         btn.addEventListener('click', () => {
 
            
+            const text_val = document.getElementById("imc_value")
             const popup = document.getElementsByClassName("popup_erro")
             const peso = document.getElementById('num_peso').value;
             const alt = document.getElementById('num_alt').value;
@@ -216,11 +219,18 @@
             const pesoint = Number(peso);
             const altint = Number(alt);
 
-            const imc = peso / alt**2
+            const imc = peso / alt**2;
 
-            console.log(imc);
+            const val = Number(imc.toFixed(2));
 
-            if(typeof(imc) !== "number" || peso == 0 || alt == 0 || imc == Infinity){
+            
+
+            
+
+
+            console.log(val);
+
+            if(typeof(val) !== "number" || peso == 0 || alt == 0 || val == Infinity){
                 popup[0].classList.add("pop_active");
                 modal[0].style.display = 'none';
             }/*else if(peso == 0 || alt == 0 || imc == Infinity){
@@ -228,7 +238,22 @@
                 modal[0].style.display = 'none';
             }*/
             else{
-                modal[0].classList.toggle('modal_center')
+                modal[0].style.display = 'block';
+            }
+
+            if(val <= 18.5){
+                text_val.innerHTML = `O valor do seu IMC é de ${val}, cuidado, você está abaixo do peso`
+            
+            }
+            else if(val > 18.5 && imc < 24.9){
+                text_val.innerHTML = `O valor do seu IMC é de ${val}, você está no peso ideal `
+            }
+            else if(val > 24.9 && imc < 29.9){
+                text_val.innerHTML = `O valor do seu IMC é de ${val}, cuidado, você está acima do peso `
+            }
+            else if(val > 29.9){
+                text_val.innerHTML = `O valor do seu IMC é de ${val}, cuidado, você está acima do peso (Obesidade) `
+            
             }
 
             //modal[0].style.display = 'block';
@@ -246,7 +271,7 @@
 
         cancel.addEventListener('click', () => {
             const modal = document.getElementsByClassName('modal');
-            modal[0].classList.toggle('modal_center')
+            modal[0].style.display = 'none'
         })
 
     </script>
