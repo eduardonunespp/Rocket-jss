@@ -37,7 +37,7 @@
             padding: 30px 40px;
             position: absolute;
             left: 50%;
-            top: 50%;
+            top: 40%;
             transform: translate(-50%, -50%);
         }
 
@@ -133,7 +133,7 @@
             background-color: rgb(236, 236, 236);
             position: absolute;
             left: 50%;
-            top: 50%;
+            top: 77%;
             transform: translate(-50%, -50%);
             border-radius: 10px;
             display: flex;
@@ -143,26 +143,75 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            transition: 1.2s;
+            transition: 0s;
             display: none;
         }
         
         .modal p{
-            font-size: 1.2em;
+            font-size: 0.9em;
             font-weight: bold;
-            color: var(--colorsecundary)
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -110%);
+            text-align: center ;
+            line-height: 1.5em;
+            
         }
         .modal button{
             position: absolute;
-            right: -10px;
-            top: -10px;
+            right: 10px;
+            top: 10px;
             border-radius: 15px;
             border: none;
             padding: 5px 10px;
-            background-color: rgb(255, 60, 0);
+            background-color: rgba(255, 255, 255, 0);
             color: white;
             cursor: pointer;
             
+        }
+
+        .modal_negative{
+            background-color: rgb(255, 60, 0);
+            color: white;
+
+        }
+
+        .modal_positive{
+            background-color: rgb(0, 180, 0);
+            color: white;
+        }
+
+        h2{
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ccc;
+
+        }
+        .fa-heart{
+            margin: 0px 10px;
+            color: rgb(255, 60, 0);
+        }
+
+        .fa-triangle-exclamation{
+            font-size: 2.2em;
+            color: white;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .fa-circle-check{
+            font-size: 2.2em;
+            color: white;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
         }
 
        
@@ -170,8 +219,10 @@
 </head>
 <body>
 
+    <h2>Developed by <strong>eduardonunespp</strong><i class="fa-solid fa-heart"></i></h2>
+
     <div class="popup_erro">
-         <p>Por favor, digite um número válido</p>
+         <p>Por favor, digite um valor válido</p>
          <button id="button_modal"><i class="fa-solid fa-xmark"></i></button>
     </div>
 
@@ -193,7 +244,12 @@
 
         <p id="imc_value">Seu IMC é de:</p>
 
+
         <button id="cancel"><i class="fa-solid fa-xmark"></i></button>
+
+        <i class="fa-solid fa-triangle-exclamation"></i>
+
+        <i class="fa-solid fa-circle-check"></i>
         
         
     </div>
@@ -210,7 +266,8 @@
         
         btn.addEventListener('click', () => {
 
-           
+            const verif = document.getElementsByClassName("fa-circle-check");
+            const excla = document.getElementsByClassName("fa-triangle-exclamation");
             const text_val = document.getElementById("imc_value")
             const popup = document.getElementsByClassName("popup_erro")
             const peso = document.getElementById('num_peso').value;
@@ -241,22 +298,40 @@
                 modal[0].style.display = 'block';
             }
 
+
             if(val <= 18.5){
-                text_val.innerHTML = `O valor do seu IMC é de ${val}, cuidado, você está abaixo do peso`
-            
+                text_val.innerHTML = `O valor do seu IMC é de ${val}, cuidado, você está abaixo do peso`;
+                modal[0].classList.add("modal_negative");
+                modal[0].classList.remove("modal_positive");
+                excla[0].style.display = 'block';
+                verif[0].style.display = 'none';
+     
             }
-            else if(val > 18.5 && imc < 24.9){
-                text_val.innerHTML = `O valor do seu IMC é de ${val}, você está no peso ideal `
+            else if(val > 18.5 && imc < 24.8){
+                text_val.innerHTML = `Parabéns!!! o valor do seu IMC é de ${val}, você está no peso ideal `;
+                modal[0].classList.add("modal_positive");
+                modal[0].classList.remove("modal_negative");
+                excla[0].style.display = 'none';
+                verif[0].style.display = 'block';
+
             }
-            else if(val > 24.9 && imc < 29.9){
-                text_val.innerHTML = `O valor do seu IMC é de ${val}, cuidado, você está acima do peso `
+            else if(val >= 24.9 && imc < 29.9){
+                text_val.innerHTML = `O valor do seu IMC é de ${val}, cuidado, você está acima do peso `;
+                modal[0].classList.add("modal_negative");
+                modal[0].classList.remove("modal_positive");
+                excla[0].style.display = 'block';
+                verif[0].style.display = 'none';
             }
             else if(val > 29.9){
-                text_val.innerHTML = `O valor do seu IMC é de ${val}, cuidado, você está acima do peso (Obesidade) `
+                text_val.innerHTML = `O valor do seu IMC é de ${val}, cuidado, você está acima do peso (Obesidade) `;
+                modal[0].classList.add("modal_negative");
+                modal[0].classList.remove("modal_positive");
+                excla[0].style.display = 'block';
+                verif[0].style.display = 'none';
+                
             
             }
 
-            //modal[0].style.display = 'block';
 
         })
 
