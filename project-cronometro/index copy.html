@@ -12,6 +12,7 @@
          *{
             box-sizing: border-box;
             font-family: 'Roboto', sans-serif;
+           
          }
 
          :root{
@@ -28,9 +29,9 @@
             justify-content: center;
             
         }
-         .conteiner{
+         .container{
             width: 200px;
-            height: 250px;
+            height: 230px;
             display: flex;
             flex-wrap: wrap;
             color: white;
@@ -72,7 +73,7 @@
             justify-content: space-evenly;
          }
 
-        .conteiner button{
+        .container button{
             border: none;
             padding: 10px 15px;
             font-size: 2.3em;
@@ -90,8 +91,8 @@
         
          .sound-on, .sound-off{
             position: absolute;
-            right: 15px;
-            bottom: 15px;
+            right: 20px;
+            bottom: 70px;
             border: none;
             padding: 10px 15px;
             font-size: 2.3em;
@@ -123,6 +124,10 @@
          .fa-stopwatch{
             width: 36px;
             height: 44px;
+            color: white;
+         }
+         .fa-stopwatch:hover{
+             color: rgb(88, 222, 255);
          }
     </style>
 </head>
@@ -131,7 +136,7 @@
 
     <h2 class="bodyh2">#Cronometro</h2>
 
-    <div class="conteiner">
+    <div class="container">
         <div class="tempo">
             <span class="minutes">00</span>
             <span>:</span>
