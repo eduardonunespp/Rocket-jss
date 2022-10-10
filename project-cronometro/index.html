@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/034fe8f0bb.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+         *{
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+         }
+         
+        body{
+            background-color: rgb(8, 6, 34);
+            margin: 0px;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+         main{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+
+         }
+
+         .tempo{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+
+         .tempo{
+            font-size: 5em;
+         }
+
+         .constrols{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+         }
+
+         .ctrl{
+            background-color:  rgb(44, 53, 68);
+            border-radius: 20px;
+            padding: 10px;
+         }
+
+        main button{
+            border: none;
+            padding: 10px 15px;
+            font-size: 2em;
+            background-color: transparent;
+            margin: 0px 2px;
+            color: white;
+
+        }
+         .sound-on{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+         }
+
+         .sound-off{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+         }
+
+         .none{
+            display: none;
+         }
+        
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="tempo">
+            <span>22</span>
+            <span>:</span>
+            <span>00</span>
+        </div>
+        <div class="controls">
+
+            <div class="ctrl">
+            <button class="play"><i class="fa-regular fa-circle-play"></i></button>
+            <button class="pause none" ><i class="fa-regular fa-circle-pause"></i></button>
+            <button class="stop none"><i class="fa-regular fa-circle-stop"></i></button>
+            <button class="set"><i class="fa-solid fa-stopwatch"></i></button>
+            </div>
+        </div>
+
+    </main>
+
+        <footer>
+            <button class="sound-on"><i class="fa-solid fa-volume-high"></i></button>
+            <button class="sound-off "><i class="fa-solid fa-volume-xmark"></i></button>
+        </footer>
+  
+
+        <script src="script.js"></script>
+    
+</body>
+</html>

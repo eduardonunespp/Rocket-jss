@@ -20,7 +20,17 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
   }
 
-  
+  html.aumentarTexto{
+    font-size: 30px;
+  }
+
+  .azul{
+    background-color: rgb(61, 61, 182);
+  }
+
+  .au{
+    font-size: 2em;
+  }
   
   .menu {
     grid-column: 3 / 5;

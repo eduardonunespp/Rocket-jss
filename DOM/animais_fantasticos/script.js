@@ -82,6 +82,54 @@
             console.log(parag[parag.length - 1])
         }
 
+        // {
+        //     const parag = document.querySelectorAll('p');
+            
+        //     parag.forEach((p) => {
+        //         p.classList.add('estilo')
+        //         console.log(p)
+        //     })
+        
+        
+        // }
+
+        // const htmlcollection = document.getElementsByClassName('grid-section')
+        // console.log(htmlcollection)
+
+        // const arr = Array.from(htmlcollection)
+
+        // console.log(arr)
+
+        // {
+        //     // const images = document.querySelectorAll('img')
+
+        //     // images.forEach((item, index, array) => {
+        //     //     console.log(item, index, array)
+        //     // })
+
+        //     const images = document.getElementsByClassName('titulo')
+
+
+        //     const titulo = Array.from(images)
+        //     titulo.forEach((item, index, array) => {
+        //             console.log(item, index, array)
+        //      })
+        // }
+
+
+        //atividades
+
+        // mostre no console cada paragrafo do site 
+
+        // {
+        //     const parag = document.querySelectorAll('p');
+            
+        //     parag.forEach((item) => {
+        //         return console.log(item.innerText)
+        //     })
+        // }
+
+        
 
         
 
