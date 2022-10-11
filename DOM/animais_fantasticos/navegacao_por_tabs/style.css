@@ -107,6 +107,10 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     overflow-y: scroll;
     grid-column: 2;
   }
+
+  .animais-lista li{
+    cursor: pointer;
+  }
   
   .animais-lista::-webkit-scrollbar {
     width: 18px;
@@ -191,9 +195,44 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     font-weight: bold;
   }
 
-  .ativo{
-    color: red;
+  .js .js-tabcontent section {
+    display: none;
+  } 
+
+  .js-tabcontent section.ativo{
+    display: block;
+    animation-name: show;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    
   }
+
+  @keyframes show {
+
+    from{
+      transform: translateX(-30px);
+      opacity: 0%;
+    }
+    to{
+      transform: translateX((0px));
+      opacity: 100%;
+    }
+    
+  }
+
+  .js-accordion dd{
+    display: none;
+  }
+
+  .js-accordion dt::after{
+    content: ' =>'
+  }
+
+  .js-accordion dd.ativo{
+    display: block;
+  }
+
+  
   
   @media (max-width: 700px) {
     body {
