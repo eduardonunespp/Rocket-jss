@@ -28,9 +28,6 @@ function resetTime(){
 
 
 
-
-
-
 function countdown(){
     timeTimerOut = setTimeout(function(){
         let seconds = Number(secondsDisplay.textContent)
@@ -48,13 +45,12 @@ function countdown(){
             seconds = 60
 
             --minutes
-            // minutesDisplay.textContent = String(minutes - 1).padStart(2, '0')
-            // updateDisplay(String(minutes - 1), seconds)
+            //  minutesDisplay.textContent = String(minutes - 1).padStart(2, '0')
+            //  updateDisplay(String(minutes - 1), seconds)
         }
 
         updateDisplay(minutes, String(seconds - 1))
         
-
 
         countdown()
     
