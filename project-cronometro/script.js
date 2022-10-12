@@ -61,9 +61,6 @@ function countdown(){
 }, 1000)
 }
 
-   
-
-
 play.addEventListener('click', () => {
     play.classList.add('none')
     pause.classList.remove('none')
