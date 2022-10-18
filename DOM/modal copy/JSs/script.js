@@ -7,6 +7,7 @@ import {teste1, teste2} from "./moduless/teste.js";
 import * as teste from "./moduless/teste.js";
 import initModal from "./moduless/modal.js";
 import initTooltip from "./moduless/tooltip.js";
+import initDropdownMenu from  "./moduless/dropdown.js";
 
 console.log(teste.pi)
 
@@ -18,7 +19,8 @@ initAccordion()
 initAnimacaoScroll()
 initModal()
 initTooltip()
-
+initDropdownMenu()
+                  
 // teste1()
 // teste2()
 

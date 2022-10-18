@@ -1,8 +1,5 @@
 export default function initTooltip(){
-    
-}
-
-const tooltips = document.querySelectorAll('[data-tooltip]')
+    const tooltips = document.querySelectorAll('[data-tooltip]')
 
 function onMouseOver(event){
     console.log(event)
@@ -14,15 +11,32 @@ function onMouseOver(event){
     //     toolTipBox.remove()
     // }
 
+    onMouseMove.toolTipBox = toolTipBox;
+    this.addEventListener('mousemove', onMouseMove)
 
+
+
+    onMouseLeave.element = this;
     onMouseLeave.toolTipBox = toolTipBox;
     this.addEventListener('mouseleave', onMouseLeave)
+  
 }
 
 const onMouseLeave = {
     toolTipBox: "",
+    element: "",
     handleEvent() {
         this.toolTipBox.remove()
+        this.element.removeEventListener('mouseleave', onMouseLeave)
+        this.element.removeEventListener('mousemove', onMouseMove)
+        
+    }
+}
+
+const onMouseMove = {
+    handleEvent(event) {
+        this.toolTipBox.style.top = event.pageY + 20 + 'px'
+        this.toolTipBox.style.left = event.pageX + 20 + 'px'
     }
 }
 
@@ -41,3 +55,5 @@ function criarTooltipBox(element){
     console.log(toolTipBox)
     return toolTipBox;
 }
+}
+
