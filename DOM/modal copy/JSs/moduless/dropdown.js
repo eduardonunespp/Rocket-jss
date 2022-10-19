@@ -1,3 +1,5 @@
+import outsideClick from "./outside.js";
+
 
 export default function initDropdownMenu() {
     const dropdownMenus = document.querySelectorAll('[data-dropdown]');
@@ -10,39 +12,18 @@ export default function initDropdownMenu() {
     function handleClick(event) {
       event.preventDefault();
       this.classList.toggle('active');
-      outsideClick(this, () => {
+      outsideClick(this, ['touchstart', 'click'], () => {
             this.classList.remove('active')
       });
      
     };
   }
 
-  function outsideClick(element, callback){
-      const html = document.documentElement
-      const outside = 'data-outside'
-
-      if(!element.hasAttribute(outside)){
-      html.addEventListener('click', handOutSideClick)
-        element.setAttribute(outside, '')
-      }
-
-
-
-      function handOutSideClick(event){
-          console.log(element.contains(event.target))
-          if(element.contains(event.target) == false){
-              callback()
-              html.removeEventListener('click', handOutSideClick)
-              element.removeAttribute(outside)
-          }
-
-          console.log(element)
-      }
-  }
 
 
 
 
 
-
+  
+  
 
