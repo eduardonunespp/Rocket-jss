@@ -82,7 +82,7 @@ stop.addEventListener('click', () => {
     
 })
 
-set.addEventListener('click', () => {
+set.addEventListener('click', () =>  {
     set.classList.add('none')
     stop.classList.remove('none')
     minutes = prompt('Digite o tempo desejado') || 0
