@@ -470,6 +470,7 @@ main .cardapio{
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
 .backModal.active_modal{
@@ -518,13 +519,10 @@ main .cardapio{
     cursor: pointer;
     transition: 0.6s;
 
-
-
 }
 
 .modal button:hover{
     background-color: #695737;
-
 }
 
 .modal .fa-xmark{
@@ -534,8 +532,30 @@ main .cardapio{
     right: 20px;
     top: 20px;
     cursor: pointer;
-
 }
+
+[data-set="animation"]{
+    transition: 1s;
+    opacity: 0;
+}
+
+[data-set="animation"].section_anima{
+    animation-name: show-section;
+    animation-duration: 0.9s;
+    animation-fill-mode: forwards;
+    opacity: 1;
+}
+
+@keyframes show-section{
+    from{
+        transform: translateX(-100px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+
+
 
 
 

@@ -1,39 +1,80 @@
+import scrollMothActive from './modules/scrollMoth.js';
+import sectionAnimation from './modules/sectionAnimation.js';
+
+scrollMothActive();
+sectionAnimation();
 
 
-const search = document.querySelector('.fa-magnifying-glass')
-const pesquisa = document.querySelector('.pesquisa')
-const cart = document.querySelector('.fa-cart-shopping')
-const market = document.querySelector('.market')
-const login = document.querySelector('.fa-right-to-bracket')
-const backModal = document.querySelector('.backModal')
-const btnCloseModal = document.querySelector('.fa-xmark')
 
-console.log(search)
+    const search = document.querySelector('.fa-magnifying-glass')
+    const pesquisa = document.querySelector('.pesquisa')
+    const cart = document.querySelector('.fa-cart-shopping')
+    const market = document.querySelector('.market')
+    const login = document.querySelector('.fa-right-to-bracket')
+    const backModal = document.querySelector('.backModal')
 
-function pesquisaPlay(){
-    pesquisa.classList.toggle('active')
-    if(pesquisa.classList.contains('active')){
-        market.classList.remove('active_market')
+
+    const btnCloseModal = document.querySelector('.fa-xmark')
+
+    console.log(search)
+
+    function pesquisaPlay(){
+        pesquisa.classList.toggle('active')
+        if(pesquisa.classList.contains('active')){
+            market.classList.remove('active_market')
+        }
     }
-}
 
-function marketPlay(){
-    market.classList.toggle('active_market')
-    if(market.classList.contains('active_market')){
-        pesquisa.classList.remove('active')
+    function marketPlay(){
+        market.classList.toggle('active_market')
+        if(market.classList.contains('active_market')){
+            pesquisa.classList.remove('active')
+        }
     }
-}
 
-function loginPlay(){
-    backModal.classList.toggle('active_modal')
-}
+    function loginPlay(){
+        backModal.classList.toggle('active_modal')
+    }
 
-function closeModal(){
-    backModal.classList.remove('active_modal')
-}
+    function closeModal(){
+        backModal.classList.remove('active_modal')
+    }
 
 
-search.addEventListener('click', pesquisaPlay)
-cart.addEventListener('click', marketPlay)
-login.addEventListener('click', loginPlay)
-btnCloseModal.addEventListener('click', closeModal)
+    search.addEventListener('click', pesquisaPlay)
+    cart.addEventListener('click', marketPlay)
+    login.addEventListener('click', loginPlay)
+    btnCloseModal.addEventListener('click', closeModal)
+
+//modalSuave 
+
+    const linksInternos = document.querySelectorAll('.links-filho a')
+
+    console.log(linksInternos)
+
+
+    function scrollMoth(event){
+        event.preventDefault()
+        const href = event.currentTarget.getAttribute('href')
+        const section = document.querySelector(href)
+        section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end'
+        })
+    }
+
+    linksInternos.forEach((link) => {
+        link.addEventListener('click', scrollMoth)
+    })
+  
+
+
+
+
+
+
+
+
+
+
+
