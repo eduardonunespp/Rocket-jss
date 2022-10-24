@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(48, 48, 48);
+        }
+        label{
+            display: block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9em;
+            margin: 8px 0px;
+            font-weight: bold;
+            color: white;
+        }
+
+        input[type='text'], input[type='email']{
+            padding: 7px 20px;
+            border-radius: 5px;
+            border: 2spx solid rgb(255, 255, 255);
+            width: 250px;
+            display: inline-block;
+            
+            
+        }
+
+        textarea{
+            border-radius: 7px;
+            width: 250px;
+            padding: 7px 20px;
+            border: 1px solid white;
+
+
+        }
+
+        form{
+
+        }
+
+        .invalido{
+            border-color: rgb(255, 72, 0);
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <form action="" name="contato" id="contato">
+        <label for="">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+        <span class="erro"></span>
+        <label for="">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <span class="erro"></span>
+        <label for="mensagem">Mensagem</label>
+        <textarea name="mensagem" id="textarea" cols="30" rows="10" style="resize: none"></textarea>
+        <span style="display: block"data-text></span>
+        <select name="" id="">
+            <option value="blue">Azul</option>
+            <option value="red">Vermelho</option>
+        </select>
+        <!-- <input type="color">
+        <input type="date">
+        <input type="number">
+        <input type="range">
+        <input type="password"> -->
+
+        <input type="checkbox" value="identidade" id="identidade">
+    </form>
+
+
+    
+
+    <script>
+
+        const contato = document.querySelector('#contato')
+        const text = document.querySelector('[data-text]')
+        const erro = document.querySelector('.erro')
+        // console.log(document.forms)
+        // console.log(document.forms[0])
+        // console.log(contato)
+
+        console.log(contato.elements.nome.value)
+
+
+        function handleKeyUp(event){
+            const target = event.target
+            document.body.style.backgroundColor = event.target.value
+            console.log(event.target.checked)
+
+            if(!event.target.checked){
+                console.log(event.target.value)
+            }
+
+            
+            // text.innerText = event.target.value
+            // console.log(target.checkValidity())
+            // if(!target.checkValidity()){
+            //      target.classList.add('invalido')
+            //      contato.nome.setCustomValidity('Nome necessário')
+            //      contato.email.setCustomValidity('Formato de Email inválido')
+            //      contato.mensagem.setCustomValidity('Entre com uma mensagem') 
+            //      target.nextElementSibling.innerText = target.validationMessage
+                
+
+            // }
+            
+        }
+
+        //contato.addEventListener('keyup', handleKeyUp)
+        contato.addEventListener('change', handleKeyUp)
+
+        
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

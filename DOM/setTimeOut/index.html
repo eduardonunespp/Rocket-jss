@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button >Clique</button>
+
+    <script>
+
+        // function espera(){
+        //     console.log('Passou algum tempo')
+        // }
+
+        // setTimeout(espera, 0, 'passou algum tempo')
+
+        setTimeout(() => {
+            console.log('passou algum tempo')
+        }, 500)
+
+
+        for(let i = 0; i < 20; i++){
+            setTimeout(() => {
+                console.log(i)
+            }, 1000)
+        }
+
+        const btn = document.querySelector('button')
+
+        btn.addEventListener('click', handClick)
+
+        function handClick(){
+            setTimeout(() => {
+                console.log(this)
+                this.classList.add('add')
+
+            }, 1000)
+
+            
+        }
+
+        // function loop(texto){
+        //     console.log(texto)
+        // }
+
+        // setInterval(loop, 300, 'aew')
+
+        // let i = 0
+        // setInterval(() => {
+        //     console.log(i++)
+        // }, 300)
+
+        let y = 0
+        const MeuLoop = setInterval(() => {
+            console.log(y++)
+                if(y > 20){
+                    clearInterval(MeuLoop)
+                }
+        }, 300)
+
+
+
+        //  setInterval(() => {
+        //     console.log('bisteca')
+        //  }, 100)
+
+
+    </script>
+    
+</body>
+</html>
