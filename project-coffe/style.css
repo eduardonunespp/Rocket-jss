@@ -1,3 +1,8 @@
+
+@import "feedback.css";
+
+
+
 *{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -350,7 +355,7 @@ main .cardapio{
 }
 
 .boxp:hover  .fa-star{
-    color: rgb(255, 255, 0);
+    color: rgb(0, 0, 0);
 }
 
 @keyframes kart-show {

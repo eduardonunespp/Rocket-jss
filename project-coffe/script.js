@@ -66,6 +66,8 @@ sectionAnimation();
     linksInternos.forEach((link) => {
         link.addEventListener('click', scrollMoth)
     })
+
+    
   
 
 
