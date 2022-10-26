@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+         const promessa = new Promise(function(resolve, reject){
+             
+            value = true
+
+            /*setTimeout(() => {
+                resolve("Paffocan")
+            }, 1000)*/
+             if(value){
+                 resolve({name: 'eduardo', idade: 18})
+             }
+             else{
+              reject(Error('Um erro aconteceu')) 
+             }
+         })
+
+
+
+
+         const retorno = promessa.then((resolucao => {
+             console.log(resolucao)
+             return 'teste1';
+         })).then( resolucao => {
+             console.log(resolucao)
+             return 'teste2';
+         }).then( resolucao => {
+             console.log(resolucao)
+             return 'teste3';
+         }).catch( resolucao => {
+             console.log(resolucao)
+             console.log('CATCH')
+         }).finally(process => {
+             console.log('A função irá rodar independentimente do resultado da promisse')
+         })
+
+         console.log(retorno)
+
+         const promessa2 = new Promise((resolve) => {
+             resolve({nome: 'Eduardo'})
+             
+             
+         })
+
+
+         promessa2.then( promessa => {
+             promessa.idade = 18
+             console.log(promessa)
+             return promessa 
+             
+         }).then(promessa => {
+             promessa.sobrenome = 'Parente'
+             console.log(promessa)
+         })
+
+
+
+         // all 
+
+         const login = new Promise((confirmed, reject) => {
+             setTimeout(() => {
+                 confirmed("Usuário Logado")
+             }, 1000)
+         })
+
+         const dados = new Promise((confirmed, reject) => {
+            setTimeout(() => {
+                 confirmed("Usuário cadastrado")
+             }, 2000)
+            
+         })
+
+        //const processfull = Promise.all([login, dados]) 
+        const processfull = Promise.race([login, dados]) 
+
+        processfull.then((resolucao) => {
+            console.log(resolucao)
+        })
+
+
+    </script>
+
+</body>
+</html>
