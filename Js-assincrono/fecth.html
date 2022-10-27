@@ -8,16 +8,97 @@
 </head>
 <body>
 
+    <div class="conteudo"></div>
+
+        <h1></h1>
+
     <script>
 
-        const doc = fetch('./doc.txt')
+        const conteudo = document.querySelector('.conteudo')
 
-        doc.then( resolucao => {
-            resolucao.text().then((body) => {
-                console.log(body)
-            })
+        // const doc = fetch('./doc.txt')
+
+        // doc.then( resolucao => {
+        //     resolucao.text().then((body) => {
+        //         console.log(body)
+        //         const conteudo = document.querySelector('.conteudo')
+        //         conteudo.innerText = body;
+        //     })
+        // })
+
+//         const cep = fetch('https://viacep.com.br/ws/61905-520/json/')
+
+//         cep.then( resolucao => {
+//         resolucao.json().then((body) => {
+//         console.log(body.localidade)
+
+//         conteudo.innerText = body.localidade
+        
+//     })
+// })
+
+//         const estilo = fetch('./style.css')
+
+//         estilo.then( resolucao => {
+//             resolucao.text().then( resolucao => {
+//                 console.log(resolucao)
+//                 const style = document.createElement('style')
+//                 style.innerHTML = resolucao;
+//                 console.log(style)
+//                 conteudo.appendChild(style)
+                
+                
+
+//             })
+//         })
+
+
+            // const div = document.createElement('div')
+            // const h1 = document.querySelector('h1')
+
+            // const content = fetch('./sobre.html')
+
+            // content.then( conteudo => {
+            //     conteudo.text().then( conteudo => {
+            //         console.log(conteudo)
+            //         div.innerHTML = conteudo;
+            //         const titulo = div.querySelector('h1')
+            //         h1.innerText = titulo.innerText
+            //         console.log(titulo)
+                    
+            //         console.log(div)
+            //     })
+            // })
+
+        //     const cep = fetch('https://viacep.com.br/ws/61905-520/json/')
+
+        //     cep.then( conteudo => {
+        //     const conteudo2 = conteudo.clone();
+        //     conteudo.text().then(text => {
+        //         console.log(text)
+        //     })
+        //     conteudo2.json().then( json => {
+        //         console.log(json)
+        //     })
+        // })
+
+        // cep.then( response => {
+        //     console.log(response) 
+        //     response.headers.forEach(console.log)
+        // })
+
+        // const array = ['item 1', 'item 2']
+
+        // array.forEach(console.log)
+
+        const documents = fetch('https://viacep.com.br/ws/61905-520/json/')
+
+        documents.then( response => {
+            console.log(response.type)
+            if(response.status === 404){
+                console.log('Página não existe')
+            }
         })
-
     </script>
     
 </body>
