@@ -26,8 +26,6 @@ function resetTime(){
     clearTimeout(timeTimerOut)
 }
 
-
-
 function countdown(){
     timeTimerOut = setTimeout(function(){
         let seconds = Number(secondsDisplay.textContent)

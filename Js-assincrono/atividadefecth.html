@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="buscaCep" action="">
+
+        <label for="cep">CEP:</label><br>
+        <input type="text" name="cep" id="cep">
+        <input type="button" value="BuscarCep" class="btncep">
+
+        <h2>BTC</h2>
+
+        <div class="btc"></div>
+
+    </form>
+
+    <div class="resultado"></div>
+
+    <div>
+        <p class="piada">s</p>
+        <button class="btnnext">Proxima</button>
+    </div>
+
+    <script>
+
+        const inputcep = document.querySelector("input")
+        const btncep = document.querySelector(".btncep")
+        const res = document.querySelector(".resultado")
+
+        
+        btncep.addEventListener('click', handleClick)
+        inputcep.addEventListener('keyup', handleClick)
+
+
+        function handleClick(event){
+            event.preventDefault()
+            const cep = inputcep.value;
+            buscaCep(cep)
+        }
+
+        const btcDisplay = document.querySelector('.btc')
+
+        function buscaCep(cep){
+            fetch(`https://viacep.com.br/ws/${cep}/json/`).then( response => response.text()).then(body => {
+                res.innerText = body
+            })
+        }
+
+        function fetchBtc(){
+            fetch('https://blockchain.info/ticker').then( response => response.json().then(btcJson => {
+                console.log(btcJson.BRL.buy)
+                btcDisplay.innerText = ('R$ ' + btcJson.BRL.buy).replace('.',',');
+            }) )
+        }
+
+        setInterval(fetchBtc, 1000 * 30)
+
+        fetchBtc()
+
+        const btnnext = document.querySelector('.btnnext')
+        const piadaa = document.querySelector('.piada')
+        console.log(piadaa)
+
+        function puxarPiada(){
+            fetch('https://api.chucknorris.io/jokes/random').then( res => res.json()).then(piada => {
+                console.log(piada.value)
+                piadaa.innerText = piada.value;
+
+            })
+        }
+
+        btnnext.addEventListener('click', puxarPiada)
+
+        puxarPiada()
+
+
+
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>
