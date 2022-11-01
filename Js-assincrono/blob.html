@@ -14,15 +14,17 @@
 
          const img = fetch('./captura.png')
 
-             img.then( body => {
-             body.blob().then( body => {
-                 const blobURL = URL.createObjectURL(body)
-                 console.log(body)
-                 console.log(blobURL)
-                 const img = document.querySelector('img')
-                 img.src = blobURL
-             })
-         })
+
+
+              img.then( body => {
+              body.blob().then( body => {
+                  const blobURL = URL.createObjectURL(body)
+                  console.log(body)
+                  console.log(blobURL)
+                  const img = document.querySelector('img')
+                  img.src = blobURL
+              })
+          })
 
     </script>
     
