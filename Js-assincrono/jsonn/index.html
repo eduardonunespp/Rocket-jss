@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <script>
+
+
+
+            const json = fetch('./dados.json')
+
+            json.then( result => result.text().then(result => {
+                console.log(result)
+                const jsonFinal = JSON.parse(result)
+                console.log(jsonFinal)
+            }))
+
+            const configuracoes = {
+                player: "Google",
+                tempo: 25.5,
+                aula: "2.1 JavaScript",
+            }
+
+            //console.log(configuracoes)
+
+            const stringConfig = JSON.stringify(configuracoes)
+
+            localStorage.config = stringConfig
+
+            console.log(JSON.parse(stringConfig))
+
+
+
+
+     </script>
+    
+</body>
+</html>
