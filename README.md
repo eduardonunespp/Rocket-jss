@@ -8,7 +8,7 @@
   
   Bem-vindo ao meu repositório de estudos em JavaScript! Aqui você encontrará uma coleção dos meus exemplos de código, exercícios resolvidos e recursos úteis que utilizei para aprimorar minhas habilidades de programação em JavaScript, com base no curso de JavaScript Completo ES6 da Origamid.
 
-O curso de <strong><a href="https://www.origamid.com/curso/javascript-completo-es6/">JavaScript Completo ES6 da Origamid</a></ strong> é uma excelente fonte de aprendizado para dominar a linguagem JavaScript, com foco especial na versão ES6 (ECMAScript 2015) e suas funcionalidades mais modernas e poderosas.
+O curso de <strong><a href="https://www.origamid.com/curso/javascript-completo-es6/">JavaScript Completo ES6 da Origamid</a><strong /> é uma excelente fonte de aprendizado para dominar a linguagem JavaScript, com foco especial na versão ES6 (ECMAScript 2015) e suas funcionalidades mais modernas e poderosas.
 
 Ao longo do curso, aprendi os seguintes tópicos e conceitos:
 
